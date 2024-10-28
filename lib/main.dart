@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Gourmet',
       theme: ThemeData(
           primarySwatch: Colors.pink,
-          fontFamily: 'Releway',
+          fontFamily: 'Raleway',
           canvasColor: const Color.fromRGBO(255, 254, 229, 1),
           textTheme: ThemeData.light().textTheme.copyWith(
                   titleMedium: const TextStyle(
