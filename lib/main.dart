@@ -46,6 +46,10 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  bool _isFavorite(Meal meal) {
+    return _favoriteMeals.contains(meal);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -65,7 +69,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         AppRoutes.HOME: (ctx) => TabsScreen(favoriteMeals: _favoriteMeals),
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(meals: _availableMeals),
-        AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(onToggleFavorite: _toggleFavorite),
+        AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(onToggleFavorite: _toggleFavorite, isFavorite: _isFavorite),
         AppRoutes.SETTINGS: (ctx) => SettingsScreen(settings: settings, onSettingsChanged: _filterMeals),
       },
       onUnknownRoute: (settings) {
